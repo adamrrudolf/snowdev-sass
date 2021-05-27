@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { useQuery, QueryClient, QueryClientProvider } from "react-query";
+import styles from "./index.module.css";
 
 const queryClient = new QueryClient();
 
@@ -15,7 +16,7 @@ function App() {
 
   if (error) return "An error has occurred: " + error.message;
     return (
-        <div>
+        <div className={styles.pageContainer}>
           <h1>{data.name}</h1>
           <p>{data.description}</p>
           <strong>👀 {data.subscribers_count}</strong>{" "}
